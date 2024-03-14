@@ -162,10 +162,9 @@ class FileSystemCache(BaseCache):
                     fname,
                     exc_info=True,
                 )
-                return False
             if not self._over_threshold():
-                break
-        return True
+                return True
+        return False
 
     def _prune(self) -> None:
         if self._over_threshold():
